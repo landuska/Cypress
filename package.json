@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashboard": "69d9d983-6df7-46d9-9308-e4d8c8074d63"
+    "cy:dashboard": "npx cypress run --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63"
   },
   "author": "khusaenova",
   "license": "ISC",
