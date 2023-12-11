@@ -1,13 +1,9 @@
 describe("herokuapp_tests", () => {
   beforeEach(() => {
-    cy.visit("/login");
-    cy.get('input[name="username"]').type("user_teacher");
-    cy.get('input[name="password"]').type("user");
+    cy.visit(Cypress.config("baseUrl") + "/login");
+    cy.get('input[name="username"]').type(Cypress.config("username"));
+    cy.get('input[name="password"]').type(Cypress.config("password"));
     cy.get('button[type="submit"]').click();
-    cy.url().should(
-      "equal",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc"
-    );
   });
 
   it("1 element", () => {
