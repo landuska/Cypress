@@ -1,3 +1,11 @@
+before(() => {
+  cy.log("ready, steady,go!");
+});
+
+after(() => {
+  cy.log("Bye-bye!");
+});
+
 describe("herokuapp_tests", () => {
   beforeEach(() => {
     cy.visit(Cypress.config("baseUrl") + "/login");
