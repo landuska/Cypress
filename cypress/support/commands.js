@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("clickButton", (selector) => {
+  cy.get(selector).click();
+});
+
+Cypress.Commands.add("elementExist", (selector) => {
+  cy.get(selector).should("exist");
+});
+
+Cypress.Commands.add("firstElementWithThisClassClick", (selector) => {
+  cy.get(selector).first().click();
+});
+
+Cypress.Commands.add("thirdElementWithThisClassClick", (selector) => {
+  cy.get(selector).eq(2).click();
+});
+
+Cypress.Commands.add("lastElementWithThisClassClick", (selector) => {
+  cy.get(selector).last().click();
+});
+
+Cypress.Commands.add("containsTextClick", (selector, text) => {
+  cy.get(selector).contains(text).click();
+});
+
+Cypress.Commands.add("elementWithThisTextExist", (selector, words) => {
+  cy.get(selector).should("include.text", words);
+});

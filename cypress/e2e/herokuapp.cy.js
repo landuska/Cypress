@@ -3,86 +3,82 @@ describe("herokuapp_tests", () => {
     cy.visit(Cypress.config("baseUrl") + "/login");
     cy.get('input[name="username"]').type(Cypress.config("username"));
     cy.get('input[name="password"]').type(Cypress.config("password"));
-    cy.get('button[type="submit"]').click();
+    cy.clickButton('button[type="submit"]');
   });
 
-  it("1 element", () => {
-    cy.get('li[class="nav-item"]').click();
-    cy.get('h2[id="task-heading"]').should("exist");
+  it("item_Home", () => {
+    cy.clickButton('li[class="nav-item"]');
+    cy.elementExist('h2[id="task-heading"]');
   });
 
-  it("2 element", () => {
-    cy.get('li[class="dropdown nav-item"]').first().click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Task").click();
+  it("item_Entities_1", () => {
+    cy.firstElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Task");
     cy.get('h2[id="task-heading"]')
       .find('button[type="button"]')
       .should("exist");
   });
 
-  it("3 element", () => {
-    cy.get('li[class="dropdown nav-item"]').first().click();
-    cy.get('li[class="dropdown show nav-item"]').contains("User Task").click();
-    cy.get('h2[id="user-task-heading"]').should("exist");
+  it("item_Entities_2", () => {
+    cy.firstElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "User Task");
+    cy.elementExist('h2[id="user-task-heading"]');
   });
 
-  it("4 element", () => {
+  it("item_Swagger", () => {
     cy.get('li[class="dropdown nav-item"]').eq(1).click();
-    cy.get('li[class="dropdown show nav-item"]').contains("API").click();
-    cy.get("span")
-      .invoke("text")
-      .should("include", "You are not authorized to access this page.");
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "API");
+    cy.elementWithThisTextExist(
+      "span",
+      "You are not authorized to access this page."
+    );
   });
 
-  it("5 element", () => {
-    cy.get('li[class="dropdown nav-item"]').eq(2).click();
-    cy.get('li[class="dropdown show nav-item"]').contains("English").click();
-    cy.get("span")
-      .invoke("text")
-      .should("include", "You are not authorized to access this page.");
+  it("item_English", () => {
+    cy.thirdElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "English");
+    cy.elementWithThisTextExist("span", "This is your footer");
   });
 
-  it("6 element", () => {
-    cy.get('li[class="dropdown nav-item"]').eq(2).click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Français").click();
-    cy.get("span")
-      .invoke("text")
-      .should(
-        "include",
-        "Vous n'avez pas les droits pour accéder à cette page."
-      );
+  it("item_French", () => {
+    cy.thirdElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Français");
+    cy.elementWithThisTextExist(
+      "span",
+      "Vous n'avez pas les droits pour accéder à cette page."
+    );
   });
 
-  it("7 element", () => {
-    cy.get('li[class="dropdown nav-item"]').eq(2).click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Русский").click();
-    cy.get("span")
-      .invoke("text")
-      .should("include", "Вы не авторизованы для доступа к странице.");
+  it("item_Russian", () => {
+    cy.thirdElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Русский");
+    cy.elementWithThisTextExist("span", "Это ваш футтер");
   });
 
-  it("8 element", () => {
-    cy.get('li[class="dropdown nav-item"]').eq(2).click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Українська").click();
-    cy.get("span")
-      .invoke("text")
-      .should("include", "Ви не авторизовані для доступу до цієї сторінки");
+  it("item_Ukrainian", () => {
+    cy.thirdElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Українська");
+    cy.elementWithThisTextExist(
+      "span",
+      "Ви не авторизовані для доступу до цієї сторінки"
+    );
   });
 
-  it("9 element", () => {
-    cy.get('li[class="dropdown nav-item"]').last().click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Settings").click();
-    cy.get('h2[id="settings-title"]').should("exist");
+  it("item_Account_1", () => {
+    cy.lastElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Settings");
+    cy.elementExist('h2[id="settings-title"]');
   });
 
-  it("10 element", () => {
-    cy.get('li[class="dropdown nav-item"]').last().click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Password").click();
-    cy.get('h2[id="password-title"]').should("exist");
+  it("item_Account_2", () => {
+    cy.lastElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Password");
+    cy.elementExist('h2[id="password-title"]');
   });
 
-  it("11 element", () => {
-    cy.get('li[class="dropdown nav-item"]').last().click();
-    cy.get('li[class="dropdown show nav-item"]').contains("Sign out").click();
-    cy.get("h4").invoke("text").should("include", "Logged out successfully!");
+  it("item_Account_3", () => {
+    cy.lastElementWithThisClassClick('li[class="dropdown nav-item"]');
+    cy.containsTextClick('li[class="dropdown show nav-item"]', "Sign out");
+    cy.elementWithThisTextExist("h4", "Logged out successfully!");
   });
 });

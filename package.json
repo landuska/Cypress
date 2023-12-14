@@ -8,9 +8,9 @@
     "cy:run": "npx cypress run",
     "herokuapp": "npm run cy:run -- --spec 'cypress/e2e/herokuapp.cy.js'",
     "config-2": "npm run cy:open -- --config-file cypress_2.config.js",
-    "cy:dashboard": "npm run cy:run -- --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63 --config-file cypress_2.config.js --spec cypress/e2e/herokuapp.cy.js",
-    "spec1": "npm run cy:run -- --spec 'cypress/e2e/spec.cy.js' --browser chrome --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",
-    "spec2": "npm run cy:run -- --spec 'cypress/e2e/spec_2.cy.js' --browser electron --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",
+    "dashboard_2config": "npm run cy:run -- --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63 --config-file cypress_2.config.js --spec cypress/e2e/herokuapp.cy.js",
+    "spec1_chrome": "npm run cy:run -- --spec 'cypress/e2e/spec.cy.js' --browser chrome --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",
+    "spec2_electron": "npm run cy:run -- --spec 'cypress/e2e/spec_2.cy.js' --browser electron --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",
     "both_specs": "npm run spec1 && npm run spec2"
   },
   "author": "khusaenova",
