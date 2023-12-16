@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("clickButton", (selector) => {
-  cy.get(selector).click();
+  cy.get(selector).click({ force: true });
 });
 
 Cypress.Commands.add("elementExist", (selector) => {
@@ -50,4 +50,8 @@ Cypress.Commands.add("containsTextClick", (selector, text) => {
 
 Cypress.Commands.add("elementWithThisTextExist", (selector, words) => {
   cy.get(selector).should("include.text", words);
+});
+
+Cypress.Commands.add("inputText", (selector, words) => {
+  cy.get(selector).type(words);
 });
