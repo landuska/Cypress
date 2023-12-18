@@ -1,0 +1,12 @@
+{
+    "loginField": "input[name=\"username\"]",
+    "passwordField": "input[name=\"password\"]",
+    "elementForAssertion": "[data-cy=\"TaskHeading\"]",
+    "button": "button[type=\"submit\"]",
+    "navMenu": "[data-cy=\"accountMenu\"] > .d-flex",
+    "currentPasswordField": "[data-cy=\"currentPassword\"]",
+    "newPasswordField": "[data-cy=\"newPassword\"]",
+    "confirmPasswordField": "[data-cy=\"confirmPassword\"]",
+    "navMenuPassword":"[data-cy=\"passwordItem\"]",
+    "navMenuLogOut": "[data-cy=\"logout\"]"
+}

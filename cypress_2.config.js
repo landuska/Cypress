@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "qfke5b",
-  username: "lan_student",
+  username: "landysh",
   password: "student",
   e2e: {
     baseUrl: "https://sqlverifier-staging-08050d656f7a.herokuapp.com",

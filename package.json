@@ -13,11 +13,13 @@
     "electron": "npm run cy:run -- --spec 'cypress/e2e/spec_2.cy.js' --browser electron --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",
     "both_browsers": "npm run chrome && npm run electron",
     "register": "npm run cy:run -- --spec 'cypress/e2e/register.cy.js'",
-    "login": "npm run cy:run -- --spec 'cypress/e2e/login.cy.js'"
+    "login": "npm run cy:run -- --spec 'cypress/e2e/login.cy.js'",
+    "login_UI": "npm run cy:run -- --spec 'cypress/e2e/login-2.cy.js'"
   },
   "author": "khusaenova",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "cypress": "^13.6.1"
   }
 }

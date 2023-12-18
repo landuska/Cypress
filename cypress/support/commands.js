@@ -33,19 +33,19 @@ Cypress.Commands.add("elementExist", (selector) => {
 });
 
 Cypress.Commands.add("firstElementWithThisClassClick", (selector) => {
-  cy.get(selector).first().click();
+  cy.get(selector).first().click({ force: true });
 });
 
 Cypress.Commands.add("thirdElementWithThisClassClick", (selector) => {
-  cy.get(selector).eq(2).click();
+  cy.get(selector).eq(2).click({ force: true });
 });
 
 Cypress.Commands.add("lastElementWithThisClassClick", (selector) => {
-  cy.get(selector).last().click();
+  cy.get(selector).last().click({ force: true });
 });
 
 Cypress.Commands.add("containsTextClick", (selector, text) => {
-  cy.get(selector).contains(text).click();
+  cy.get(selector).contains(text).click({ force: true });
 });
 
 Cypress.Commands.add("elementWithThisTextExist", (selector, words) => {

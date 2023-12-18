@@ -5,7 +5,7 @@ module.exports = defineConfig({
   username: "user_teacher",
   password: "user",
   e2e: {
-    baseUrl: "https://sqlverifier-live-6e21ca0ed768.herokuapp.com",
+    baseUrl: "https://sqlverifier-staging-08050d656f7a.herokuapp.com",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
