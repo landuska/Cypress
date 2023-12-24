@@ -1,4 +1,4 @@
-const textData = require("../fixtures/data.json");
+const textData = require("../fixtures/data_registration.json");
 
 describe("register_tests", () => {
   beforeEach(() => {

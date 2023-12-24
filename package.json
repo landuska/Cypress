@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "herokuapp": "npm run cy:run -- --spec 'cypress/e2e/herokuapp.cy.js'",
+    "menu_nav": "npm run cy:run -- --spec 'cypress/e2e/menu_nav.cy.js'",
     "config-2": "npm run cy:open -- --config-file cypress_2.config.js",
     "dashboard_2config": "npm run cy:run -- --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63 --config-file cypress_2.config.js --spec cypress/e2e/herokuapp.cy.js",
     "chrome": "npm run cy:run -- --spec 'cypress/e2e/spec.cy.js' --browser chrome --record --key 69d9d983-6df7-46d9-9308-e4d8c8074d63",

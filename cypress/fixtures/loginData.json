@@ -1,24 +1,25 @@
 [{
     "username":"landysh",
-    "newPassword":"land"
+    "newPassword":"land",
+    "enter": true
  },
  {
-    "username":" ",
-    "newPassword":"land"
- },
- {
-    "username":"landysh",
-    "newPassword":" "
- },
+   "username":" ",
+   "newPassword":"land",
+   "enter": false
+},
+{
+   "username":"landysh",
+   "newPassword":" ",
+   "enter": false
+},
  {
     "username":"fjgsdlkfjg",
-    "newPassword":"land"
+    "newPassword":"land",
+    "enter": false
  },
  {
     "username":"landysh",
-    "newPassword":"lkfjgslfk"
- },
- {
-    "username":" ",
-    "newPassword":" "
+    "newPassword":"lkfjgslfk",
+    "enter": false
  }]
