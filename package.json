@@ -14,7 +14,8 @@
     "both_browsers": "npm run chrome && npm run electron",
     "register": "npm run cy:run -- --spec 'cypress/e2e/register.cy.js'",
     "login": "npm run cy:run -- --spec 'cypress/e2e/login.cy.js'",
-    "login_UI": "npm run cy:run -- --spec 'cypress/e2e/login-2.cy.js'"
+    "login_UI": "npm run cy:run -- --spec 'cypress/e2e/login-2.cy.js'",
+    "API": "npm run cy:run -- --spec 'cypress/e2e/API.cy.js'"
   },
   "author": "khusaenova",
   "license": "ISC",
